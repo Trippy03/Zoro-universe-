@@ -88,11 +88,11 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
     [
-        InlineKeyboardButton("⚡ 𝖩𝗈𝗂𝗇 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 ⚡", url="https://t.me/Animes_Xyz"),
+        InlineKeyboardButton("⚡ 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 ⚡", url='https://t.me/Trippy_xt'),
     ],
     [
-                    InlineKeyboardButton("⚔️ About Me ⚔️", callback_data = "about"),
-                    InlineKeyboardButton("🫧 Close 🫧", callback_data = "close")
+                    InlineKeyboardButton("✨About Me✨", callback_data = "about"),
+                    InlineKeyboardButton("🔒Close🔒", callback_data = "close")
         
     ]
             ]
@@ -161,7 +161,7 @@ async def get_users(client: Bot, message: Message):
     users = await full_userbase()
     await msg.edit(f"{len(users)} users are using this bot")
 
-@Bot.on_message(filters.private & filters.command('broadcast') & filters.user(OWNER_ID))
+@Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
         query = await full_userbase()
